@@ -1,4 +1,4 @@
-# ATS SPC - Groupe C - Dispositif 2
+# ATS SPC - Group C
 
 ## Authors
 
