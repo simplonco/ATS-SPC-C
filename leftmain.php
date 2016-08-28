@@ -27,9 +27,9 @@ if ($request == 'POST') {
         if (isset($displayname)) {
             $displayname = addslashes($displayname);
             $query = 'select displayname from '.$db_prefix."employees where displayname = '".$displayname."'";
-            $emp_name_result = mysql_query($query);
+            $emp_name_result = mysqli_query($query);
 
-            while ($row = mysql_fetch_array($emp_name_result)) {
+            while ($row = mysqli_fetch_array($emp_name_result)) {
                 $tmp_displayname = ''.$row['displayname'].'';
             }
             if ((!isset($tmp_displayname)) && (!empty($displayname))) {
@@ -42,9 +42,9 @@ if ($request == 'POST') {
         if (isset($fullname)) {
             $fullname = addslashes($fullname);
             $query = 'select empfullname from '.$db_prefix."employees where empfullname = '".$fullname."'";
-            $emp_name_result = mysql_query($query);
+            $emp_name_result = mysqli_query($query);
 
-            while ($row = mysql_fetch_array($emp_name_result)) {
+            while ($row = mysqli_fetch_array($emp_name_result)) {
                 $tmp_empfullname = ''.$row['empfullname'].'';
             }
             if ((!isset($tmp_empfullname)) && (!empty($fullname))) {
@@ -249,11 +249,11 @@ echo "<tr><td height=4 align=left valign=middle class=misc_items>\n";
 
 if ($show_display_name == 'yes') {
     $query = 'select displayname from '.$db_prefix."employees where disabled <> '1'  and empfullname <> 'admin' order by displayname";
-    $emp_name_result = mysql_query($query);
+    $emp_name_result = mysqli_query($query);
     echo "<select name='left_displayname' tabindex=1>\n";
     echo "<option value =''>...</option>\n";
 
-    while ($row = mysql_fetch_array($emp_name_result)) {
+    while ($row = mysqli_fetch_array($emp_name_result)) {
         $abc = stripslashes(''.$row['displayname'].'');
 
         if ((isset($_COOKIE['remember_me'])) && (stripslashes($_COOKIE['remember_me']) == $abc)) {
@@ -264,15 +264,15 @@ if ($show_display_name == 'yes') {
     }
 
     echo "</select></td></tr>\n";
-    mysql_free_result($emp_name_result);
+    mysqli_free_result($emp_name_result);
     echo "<tr><td height=7></td></tr>\n";
 } else {
     $query = 'select empfullname from '.$db_prefix."employees where disabled <> '1'  and empfullname <> 'admin' order by empfullname";
-    $emp_name_result = mysql_query($query);
+    $emp_name_result = mysqli_query($query);
     echo "<select name='left_fullname' tabindex=1>\n";
     echo "<option value =''>...</option>\n";
 
-    while ($row = mysql_fetch_array($emp_name_result)) {
+    while ($row = mysqli_fetch_array($emp_name_result)) {
         $def = stripslashes(''.$row['empfullname'].'');
         if ((isset($_COOKIE['remember_me'])) && (stripslashes($_COOKIE['remember_me']) == $def)) {
             echo "<option selected>$def</option>\n";
@@ -282,7 +282,7 @@ if ($show_display_name == 'yes') {
     }
 
     echo "</select></td></tr>\n";
-    mysql_free_result($emp_name_result);
+    mysqli_free_result($emp_name_result);
     echo "<tr><td height=7></td></tr>\n";
 }
 
@@ -301,17 +301,17 @@ echo "<tr><td height=4 align=left valign=middle class=misc_items>\n";
 // query to populate dropdown with punchlist items //
 
 $query = 'select punchitems from '.$db_prefix.'punchlist';
-$punchlist_result = mysql_query($query);
+$punchlist_result = mysqli_query($query);
 
 echo "<select name='left_inout' tabindex=3>\n";
 echo "<option value =''>...</option>\n";
 
-while ($row = mysql_fetch_array($punchlist_result)) {
+while ($row = mysqli_fetch_array($punchlist_result)) {
     echo '              <option>'.$row['punchitems']."</option>\n";
 }
 
 echo "</select></td></tr>\n";
-mysql_free_result($punchlist_result);
+mysqli_free_result($punchlist_result);
 
 echo "<tr><td height=7></td></tr>\n";
 echo "<tr><td height=4 align=left valign=middle class=misc_items>Notes:</td></tr>\n";
@@ -377,9 +377,9 @@ if ($request == 'POST') {
     }
 
     $query = 'select punchitems from '.$db_prefix.'punchlist';
-    $punchlist_result = mysql_query($query);
+    $punchlist_result = mysqli_query($query);
 
-    while ($row = mysql_fetch_array($punchlist_result)) {
+    while ($row = mysqli_fetch_array($punchlist_result)) {
         $tmp_inout = ''.$row['punchitems'].'';
     }
 
@@ -464,9 +464,9 @@ if ($request == 'POST') {
     if ($use_passwd == 'no') {
         if ($show_display_name == 'yes') {
             $sel_query = 'select empfullname from '.$db_prefix."employees where displayname = '".$displayname."'";
-            $sel_result = mysql_query($sel_query);
+            $sel_result = mysqli_query($sel_query);
 
-            while ($row = mysql_fetch_array($sel_result)) {
+            while ($row = mysqli_fetch_array($sel_result)) {
                 $fullname = stripslashes(''.$row['empfullname'].'');
                 $fullname = addslashes($fullname);
             }
@@ -480,10 +480,10 @@ if ($request == 'POST') {
                       '".$notes."')";
         }
 
-        $result = mysql_query($query);
+        $result = mysqli_query($query);
 
         $update_query = 'update '.$db_prefix."employees set tstamp = '".$tz_stamp."' where empfullname = '".$fullname."'";
-        $other_result = mysql_query($update_query);
+        $other_result = mysqli_query($update_query);
 
         echo "<head>\n";
         echo "<meta http-equiv='refresh' content=0;url=index.php>\n";
@@ -491,9 +491,9 @@ if ($request == 'POST') {
     } else {
         if ($show_display_name == 'yes') {
             $sel_query = 'select empfullname, employee_passwd from '.$db_prefix."employees where displayname = '".$displayname."'";
-            $sel_result = mysql_query($sel_query);
+            $sel_result = mysqli_query($sel_query);
 
-            while ($row = mysql_fetch_array($sel_result)) {
+            while ($row = mysqli_fetch_array($sel_result)) {
                 $tmp_password = ''.$row['employee_passwd'].'';
                 $fullname = ''.$row['empfullname'].'';
             }
@@ -502,9 +502,9 @@ if ($request == 'POST') {
             $fullname = addslashes($fullname);
         } else {
             $sel_query = 'select empfullname, employee_passwd from '.$db_prefix."employees where empfullname = '".$fullname."'";
-            $sel_result = mysql_query($sel_query);
+            $sel_result = mysqli_query($sel_query);
 
-            while ($row = mysql_fetch_array($sel_result)) {
+            while ($row = mysqli_fetch_array($sel_result)) {
                 $tmp_password = ''.$row['employee_passwd'].'';
             }
         }
@@ -518,10 +518,10 @@ if ($request == 'POST') {
                       '".$notes."')";
             }
 
-            $result = mysql_query($query);
+            $result = mysqli_query($query);
 
             $update_query = 'update '.$db_prefix."employees set tstamp = '".$tz_stamp."' where empfullname = '".$fullname."'";
-            $other_result = mysql_query($update_query);
+            $other_result = mysqli_query($update_query);
 
             echo "<head>\n";
             echo "<meta http-equiv='refresh' content=0;url=index.php>\n";

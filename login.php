@@ -22,9 +22,9 @@ if (isset($_POST['login_userid']) && (isset($_POST['login_password']))) {
 
     $query = 'select empfullname, employee_passwd, admin, time_admin from '.$db_prefix."employees
               where empfullname = '".$login_userid."'";
-    $result = mysql_query($query);
+    $result = mysqli_query($query);
 
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         $admin_username = ''.$row['empfullname'].'';
         $admin_password = ''.$row['employee_passwd'].'';
         $admin_auth = ''.$row['admin'].'';
@@ -64,7 +64,7 @@ if (isset($_SESSION['valid_user'])) {
     echo "<input type='password' name='login_password' class='form-control' placeholder='Password'>\n";
     echo "<span class='glyphicon glyphicon-lock form-control-feedback'></span>\n";
     echo "</div>\n";
-    echo "<div class='row'>\n";
+    echo "<div class='row' style='margin-left: 5px;'>\n";
     echo "<div class='col-xs-8'>\n";
     echo "<div class='checkbox icheck'>\n";
     echo "<label>\n";
