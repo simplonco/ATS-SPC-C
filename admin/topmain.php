@@ -19,8 +19,8 @@ echo "  <tr>";
 */
 // display a 'reset cookie' message if $use_client_tz = "yes" //
 
-if ($date_link == "none") {
-    if ($use_client_tz == "yes") {
+if ($date_link == "non") {
+    if ($use_client_tz == "oui") {
         echo "    <td class=notprint valign=middle align=right style='font-size:9px;'>
       <p>If the times below appear to be an hour off, click <a href='../resetcookie.php' style='font-size:9px;'>here</a> to reset.<br />
          If that doesn't work, restart your web browser and reset again.</p></td>\n";
@@ -29,7 +29,7 @@ if ($date_link == "none") {
 
 } else {
 
-    if ($use_client_tz == "yes") {
+    if ($use_client_tz == "oui") {
         echo "    <td class=notprint valign=middle align=right style='font-size:9px;'>
       <p>If the times below appear to be an hour off, click <a href='../resetcookie.php' style='font-size:9px;'>here</a> to reset.<br />
         If that doesn't work, restart your web browser and reset again.</p></td>\n";

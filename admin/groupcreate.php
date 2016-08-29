@@ -4,7 +4,7 @@ session_start();
 include '../config.inc.php';
 include 'header.php';
 include 'topmain.php';
-echo "<title>$title - Create Group</title>\n";
+echo "<title>$title - Créer un groupe</title>\n";
 echo '<head>';
 echo '<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">';
 echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">';
@@ -70,11 +70,11 @@ if ($request == 'GET') {
   echo "</div>\n";
   echo "<div class='pull-left info'>\n";
   echo "<p>$logged_in_user</p>\n";
-  echo "<a href='#''><i class='fa fa-circle text-success'></i> Online</a>\n";
+  echo "<a href='#''><i class='fa fa-circle text-success'></i> Connecté</a>\n";
   echo "</div>\n";
   echo "</div>\n";
   echo "<ul class='sidebar-menu'>\n";
-  echo "<li class='header'>MAIN NAVIGATION</li>\n";
+  echo "<li class='header'>MENU</li>\n";
   echo "<li class='active treeview'>\n";
   echo "<a href=''#'>\n";
   echo "<i class='fa fa-dashboard'></i> <span>Dashboard</span> <i class='fa fa-angle-left pull-right'></i>\n";
@@ -87,9 +87,9 @@ if ($request == 'GET') {
   echo "<i class='fa fa-angle-left pull-right'></i>\n";
   echo "</a>\n";
   echo "<ul class='treeview-menu'>\n";
-  echo "<li><a href='useradmin.php'><i class='fa fa-circle-o'></i>User Summary</a></li>\n";
-  echo "<li><a href='usercreate.php'><i class='fa fa-circle-o'></i>Create New User</a></li>\n";
-  echo "<li><a href='usersearch.php'><i class='fa fa-circle-o'></i>User Search</a></li>\n";
+  echo "<li><a href='useradmin.php'><i class='fa fa-circle-o'></i>Résumer utilisateur</a></li>\n";
+  echo "<li><a href='usercreate.php'><i class='fa fa-circle-o'></i>Créer un nouveau utilisateur</a></li>\n";
+  echo "<li><a href='usersearch.php'><i class='fa fa-circle-o'></i>Recherche utlisateur</a></li>\n";
   echo "</ul>\n";
   echo "</li>\n";
 
@@ -100,8 +100,8 @@ if ($request == 'GET') {
   echo "<i class='fa fa-angle-left pull-right'></i>\n";
   echo "</a>\n";
   echo "<ul class='treeview-menu'>\n";
-  echo "<li><a href='officeadmin.php'><i class='fa fa-circle-o'></i>Office Summary</a></li>\n";
-  echo "<li><a href='officecreate.php'><i class='fa fa-circle-o'></i>Create New Office</a></li>\n";
+  echo "<li><a href='officeadmin.php'><i class='fa fa-circle-o'></i>Résumer Bureau</a></li>\n";
+  echo "<li><a href='officecreate.php'><i class='fa fa-circle-o'></i>Créer un nouveau Bureau</a></li>\n";
   echo "</ul>\n";
   echo "</li>\n";
 
@@ -112,8 +112,8 @@ if ($request == 'GET') {
   echo "<i class='fa fa-angle-left pull-right'></i>\n";
   echo "</a>\n";
   echo "<ul class='treeview-menu'>\n";
-  echo "<li><a href='groupadmin.php'><i class='fa fa-circle-o'></i>Groups Summary</a></li>\n";
-  echo "<li><a href='groupcreate.php'><i class='fa fa-circle-o'></i>Create New Group</a></li>\n";
+  echo "<li><a href='groupadmin.php'><i class='fa fa-circle-o'></i>Résumer Groupe</a></li>\n";
+  echo "<li><a href='groupcreate.php'><i class='fa fa-circle-o'></i>Créer un nouveau Groupe</a></li>\n";
   echo "</ul>\n";
   echo "</li>\n";
 
@@ -150,7 +150,7 @@ if ($request == 'GET') {
     echo "              <tr><td class=table_rows height=25 width=20% style='padding-left:32px;' nowrap>Parent Office:</td><td colspan=2 align=left width=80%
                       style='color:red;font-family:Tahoma;font-size:10px;padding-left:20px;'>
                       <select name='select_office_name'>\n";
-    echo "                        <option value ='1'>Choose One</option>\n";
+    echo "                        <option value ='1'>Choisir</option>\n";
 
     while ($row = mysql_fetch_array($result)) {
         echo "                        <option>" . $row['officename'] . "</option>\n";
@@ -185,11 +185,11 @@ if ($request == 'GET') {
     echo "</div>\n";
     echo "<div class='pull-left info'>\n";
     echo "<p>$logged_in_user</p>\n";
-    echo "<a href='#''><i class='fa fa-circle text-success'></i> Online</a>\n";
+    echo "<a href='#''><i class='fa fa-circle text-success'></i>Connecté</a>\n";
     echo "</div>\n";
     echo "</div>\n";
     echo "<ul class='sidebar-menu'>\n";
-    echo "<li class='header'>MAIN NAVIGATION</li>\n";
+    echo "<li class='header'>Menu</li>\n";
     echo "<li class='active treeview'>\n";
     echo "<a href=''#'>\n";
     echo "<i class='fa fa-dashboard'></i> <span>Dashboard</span> <i class='fa fa-angle-left pull-right'></i>\n";
@@ -202,9 +202,9 @@ if ($request == 'GET') {
     echo "<i class='fa fa-angle-left pull-right'></i>\n";
     echo "</a>\n";
     echo "<ul class='treeview-menu'>\n";
-    echo "<li><a href='useradmin.php'><i class='fa fa-circle-o'></i>User Summary</a></li>\n";
-    echo "<li><a href='usercreate.php'><i class='fa fa-circle-o'></i>Create New User</a></li>\n";
-    echo "<li><a href='usersearch.php'><i class='fa fa-circle-o'></i>User Search</a></li>\n";
+    echo "<li><a href='useradmin.php'><i class='fa fa-circle-o'></i>Résumer utilisatuer</a></li>\n";
+    echo "<li><a href='usercreate.php'><i class='fa fa-circle-o'></i>Créer un nouveau utilisateur</a></li>\n";
+    echo "<li><a href='usersearch.php'><i class='fa fa-circle-o'></i>Recherche utilisateur</a></li>\n";
     echo "</ul>\n";
     echo "</li>\n";
 
@@ -215,8 +215,8 @@ if ($request == 'GET') {
     echo "<i class='fa fa-angle-left pull-right'></i>\n";
     echo "</a>\n";
     echo "<ul class='treeview-menu'>\n";
-    echo "<li><a href='officeadmin.php'><i class='fa fa-circle-o'></i>Office Summary</a></li>\n";
-    echo "<li><a href='officecreate.php'><i class='fa fa-circle-o'></i>Create New Office</a></li>\n";
+    echo "<li><a href='officeadmin.php'><i class='fa fa-circle-o'></i>Résumer Bureau</a></li>\n";
+    echo "<li><a href='officecreate.php'><i class='fa fa-circle-o'></i>Créer nouveau Bureau</a></li>\n";
     echo "</ul>\n";
     echo "</li>\n";
 

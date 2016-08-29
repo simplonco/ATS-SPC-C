@@ -9,7 +9,7 @@ if ($request !== 'POST') {
     include 'header_get.php';
     include 'topmain.php';
 }
-echo "<title>$title - Delete Office</title>\n";
+echo "<title>$title - Supprimer Bureau</title>\n";
 echo '<head>';
 echo '<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">';
 echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">';

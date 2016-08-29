@@ -6,7 +6,7 @@ include '../config.inc.php';
 include 'header.php';
 include 'topmain.php';
 
-echo "<title>$title - User Summary</title>\n";
+echo "<title>$title - Résumé de l'utilisateur</title>\n";
 echo '<head>';
 echo '<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">';
 echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">';

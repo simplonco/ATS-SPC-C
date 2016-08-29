@@ -5,7 +5,7 @@ session_start();
 include '../config.inc.php';
 include 'header.php';
 include 'topmain.php';
-echo "<title>$title - Group Summary</title>\n";
+echo "<title>$title - Résumer</title>\n";
 echo '<head>';
 echo '<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">';
 echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">';
@@ -70,11 +70,11 @@ echo "<img src='../dist/img/user2-160x160.jpg' class='img-circle' alt='User Imag
 echo "</div>\n";
 echo "<div class='pull-left info'>\n";
 echo "<p>$logged_in_user</p>\n";
-echo "<a href='#''><i class='fa fa-circle text-success'></i> Online</a>\n";
+echo "<a href='#''><i class='fa fa-circle text-success'></i> Connecté</a>\n";
 echo "</div>\n";
 echo "</div>\n";
 echo "<ul class='sidebar-menu'>\n";
-echo "<li class='header'>MAIN NAVIGATION</li>\n";
+echo "<li class='header'>Menu</li>\n";
 echo "<li class='active treeview'>\n";
 echo "<a href=''#'>\n";
 echo "<i class='fa fa-dashboard'></i> <span>Dashboard</span> <i class='fa fa-angle-left pull-right'></i>\n";
@@ -87,9 +87,9 @@ echo "<span>Users</span>\n";
 echo "<i class='fa fa-angle-left pull-right'></i>\n";
 echo "</a>\n";
 echo "<ul class='treeview-menu'>\n";
-echo "<li><a href='useradmin.php'><i class='fa fa-circle-o'></i>User Summary</a></li>\n";
-echo "<li><a href='usercreate.php'><i class='fa fa-circle-o'></i>Create New User</a></li>\n";
-echo "<li><a href='usersearch.php'><i class='fa fa-circle-o'></i>User Search</a></li>\n";
+echo "<li><a href='useradmin.php'><i class='fa fa-circle-o'></i>Résumer utlisateur</a></li>\n";
+echo "<li><a href='usercreate.php'><i class='fa fa-circle-o'></i>Créer un nouveau utilisateur</a></li>\n";
+echo "<li><a href='usersearch.php'><i class='fa fa-circle-o'></i>Recherche utilisateur</a></li>\n";
 echo "</ul>\n";
 echo "</li>\n";
 
@@ -100,8 +100,8 @@ echo "<span>Offices</span>\n";
 echo "<i class='fa fa-angle-left pull-right'></i>\n";
 echo "</a>\n";
 echo "<ul class='treeview-menu'>\n";
-echo "<li><a href='officeadmin.php'><i class='fa fa-circle-o'></i>Office Summary</a></li>\n";
-echo "<li><a href='officecreate.php'><i class='fa fa-circle-o'></i>Create New Office</a></li>\n";
+echo "<li><a href='officeadmin.php'><i class='fa fa-circle-o'></i>Résumer Bureau</a></li>\n";
+echo "<li><a href='officecreate.php'><i class='fa fa-circle-o'></i>Créer un nouveau Bureau</a></li>\n";
 echo "</ul>\n";
 echo "</li>\n";
 
@@ -112,8 +112,8 @@ echo "<span>Groups</span>\n";
 echo "<i class='fa fa-angle-left pull-right'></i>\n";
 echo "</a>\n";
 echo "<ul class='treeview-menu'>\n";
-echo "<li><a href='groupadmin.php'><i class='fa fa-circle-o'></i>Groups Summary</a></li>\n";
-echo "<li><a href='groupcreate.php'><i class='fa fa-circle-o'></i>Create New Group</a></li>\n";
+echo "<li><a href='groupadmin.php'><i class='fa fa-circle-o'></i>Résumer Groupe</a></li>\n";
+echo "<li><a href='groupcreate.php'><i class='fa fa-circle-o'></i>Crée un nouveau Groupe</a></li>\n";
 echo "</ul>\n";
 echo "</li>\n";
 
@@ -131,15 +131,15 @@ echo "      <table width=100% height=100% border=0 cellpadding=10 cellspacing=1>
 echo "        <tr class=right_main_text>\n";
 echo "          <td valign=top>\n";
 echo "            <table width=60% align=center height=40 border=0 cellpadding=0 cellspacing=0>\n";
-echo "              <tr><th class=table_heading_no_color nowrap width=100% valign=top halign=left>Group Summary</th></tr>\n";
+echo "              <tr><th class=table_heading_no_color nowrap width=100% valign=top halign=left>Résumer Groupe</th></tr>\n";
 echo "            </table>\n";
 echo "            <table class=table_border width=60% align=center border=0 cellpadding=0 cellspacing=0>\n";
 echo "              <tr><th class=table_heading nowrap width=7% align=left>&nbsp;</th>\n";
-echo "                <th class=table_heading nowrap width=25% align=left>Group Name</th>\n";
+echo "                <th class=table_heading nowrap width=25% align=left>Nom Groupe</th>\n";
 echo "                <th class=table_heading width=58% align=left>Parent Office</th>\n";
-echo "                <th class=table_heading nowrap width=4% align=center>Users</th>\n";
-echo "                <th class=table_heading nowrap width=3% align=center>Edit</th>\n";
-echo "                <th class=table_heading nowrap width=3% align=center>Delete</th></tr>\n";
+echo "                <th class=table_heading nowrap width=4% align=center>utilisateur</th>\n";
+echo "                <th class=table_heading nowrap width=3% align=center>Modifier</th>\n";
+echo "                <th class=table_heading nowrap width=3% align=center>Supprimer</th></tr>\n";
 
 $row_count = 0;
 

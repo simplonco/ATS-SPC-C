@@ -3,9 +3,9 @@
 
 
 $db_hostname = "localhost";
-$db_username = "adams";
-$db_password = "adams";
-$db_name = "adamsakh_accenturdb";
+$db_username = "root";
+$db_password = "root";
+$db_name = "accenturdb";
 
 
 

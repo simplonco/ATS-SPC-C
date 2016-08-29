@@ -1,8 +1,10 @@
 # ATS SPC - Groupe C - Dispositif 2
 
 * Adam
+* Bertrand
 * Omar
-* Suliman
+
+
 
 
 First Stage of the login and user manger panel had been completed with interface. Next step is to creat user profile demo and add request telework section. For the we need to creat another parellel login system utilizing the same databases but we need seperate table for storing the the temporaray autintication token.

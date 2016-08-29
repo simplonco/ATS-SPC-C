@@ -9,7 +9,7 @@ if ($request !== 'POST') {
     include 'header_get.php';
     include 'topmain.php';
 }
-echo "<title>$title - Edit User</title>\n";
+echo "<title>$title - Modifier l'utilisateur</title>\n";
 echo '<head>';
 echo '<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">';
 echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">';
@@ -669,7 +669,7 @@ if ($request == 'GET') {
     echo "</aside>\n";
 
     echo "<div class='content-wrapper'>\n";
-    
+
     echo "    <td align=left class=right_main scope=col>\n";
     echo "      <table width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
     echo "        <tr class=right_main_text>\n";

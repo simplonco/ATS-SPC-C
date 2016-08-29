@@ -4,7 +4,7 @@ session_start();
 include '../config.inc.php';
 include 'header.php';
 include 'topmain.php';
-echo "<title>$title - Edit Group</title>\n";
+echo "<title>$title - Modifier le groupe</title>\n";
 echo '<head>';
 echo '<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">';
 echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">';

@@ -4,7 +4,7 @@ session_start();
 include '../config.inc.php';
 include 'header.php';
 include 'topmain.php';
-echo "<title>$title - Change Password</title>\n";
+echo "<title>$title - Changer le mots de passe</title>\n";
 echo '<head>';
 echo '<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">';
 echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">';

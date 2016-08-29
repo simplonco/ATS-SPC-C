@@ -12,7 +12,7 @@ if (empty($connecting_ip)) {
 
 // determine if connecting ip address is allowed to connect to Accenture System  //
 
-if ($restrict_ips == "yes") {
+if ($restrict_ips == "oui") {
     for ($x = 0; $x < count($allowed_networks); $x++) {
         $is_allowed = ip_range($allowed_networks[$x], $connecting_ip);
         if (!empty($is_allowed)) {
@@ -20,7 +20,7 @@ if ($restrict_ips == "yes") {
         }
     }
     if (!isset($allowed)) {
-        echo "You are not authorized to view this page.";
+        echo "Vous n'êtes pas autorisé à afficher cette page.";
         exit;
     }
 }
@@ -29,7 +29,7 @@ if ($restrict_ips == "yes") {
 
 @ $db = mysql_pconnect($db_hostname, $db_username, $db_password);
 if (!$db) {
-    echo "Error: Could not connect to the database. Please try again later.";
+    echo "Erreur: Impossible de se connecter à la base de données. Veuillez réessayer plus tard.";
     exit;
 }
 mysql_select_db($db_name);
@@ -50,13 +50,13 @@ while (@$row = mysql_fetch_array($db_version_result)) {
 
 // include css and timezone offset//
 
-if (($use_client_tz == "yes") && ($use_server_tz == "yes")) {
+if (($use_client_tz == "oui") && ($use_server_tz == "oui")) {
     echo 'Please reconfigure your config.inc.php file, you cannot have both $use_client_tz AND $use_server_tz set to \'yes\'';
     exit;
 }
 
 echo "<head>\n";
-if ($use_client_tz == "yes") {
+if ($use_client_tz == "oui") {
     if (!isset($_COOKIE['tzoffset'])) {
         include '../tzoffset.php';
         echo "<meta http-equiv='refresh' content='0;URL=index.php'>\n";
